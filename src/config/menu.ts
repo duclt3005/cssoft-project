@@ -6,7 +6,7 @@ export const MENUS = {
   },
   teacher: {
     title: "Giáo viên",
-    url: "/teacher",
+    url: "/teacher/",
     slug: "teacher",
   },
   student: {
@@ -16,7 +16,7 @@ export const MENUS = {
   },
   class: {
     title: "Lớp học",
-    url: "/class",
+    url: "/class/",
     slug: "class",
   },
   subject: {

@@ -58,11 +58,25 @@ export const PERMISSION: IPermission = {
       icon: "",
       menu: {},
     },
+    inputScore: {
+      title: "Nhập điểm",
+      url: "/teacher/score",
+      icon: "",
+      menu: {},
+    },
   },
   student: {
     account: {
       title: "Tài khoản",
       url: "/student/account",
+      icon: "",
+      menu: {},
+    },
+  },
+  class: {
+    account: {
+      title: "Danh sách lớp",
+      url: "/class/classManager",
       icon: "",
       menu: {},
     },

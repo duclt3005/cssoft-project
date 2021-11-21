@@ -2,8 +2,8 @@ export const ROUTES = {
   HOME: "/",
   SIGN_IN: "/signin",
   SYSTEM: "/system",
-  TEACHER: "/teacher",
+  TEACHER: "/teacher/*",
   STUDENT: "/student",
-  CLASS: "/class",
+  CLASS: "/class/*",
   SUBJECT: "/subject",
 };

@@ -21,19 +21,30 @@ const Sidebar = (props: SidebarProps) => {
   return (
     <Sider trigger={null} collapsible collapsed={collapsed}>
       <div className="logo">
-        <Link to="/"><p style={{ color: "#fff", fontSize: "20px", fontWeight: "bold", textAlign: "center" }}>ESM</p></Link>
+        <Link to="/">
+          <p
+            style={{
+              color: "#fff",
+              fontSize: "20px",
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
+          >
+            ESM
+          </p>
+        </Link>
       </div>
       <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-        {
-          sidebarMenuKeys.map((menu, key) => (
-            <Menu.Item key={key}>
+        {sidebarMenuKeys.map((menu, key) => (
+          <Menu.Item key={key}>
+            <Link to={sidebarMenu[menu].url}>
               <p>
                 <i className={sidebarMenu[menu].icon as string}></i>
                 {sidebarMenu[menu].title}
               </p>
-            </Menu.Item>
-          ))
-        }
+            </Link>
+          </Menu.Item>
+        ))}
       </Menu>
     </Sider>
   );

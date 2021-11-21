@@ -3,6 +3,7 @@ import { Layout } from "antd";
 import { useState } from "react";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import Navbar from "@/components/Header/Header";
+import RouterTeacher from "./router/router";
 
 const { Content } = Layout;
 
@@ -11,7 +12,7 @@ const { Content } = Layout;
 /**
  * Home
  */
-export default function Student() {
+export default function Teacher() {
   const [collapsed, setCollapsed] = useState(false);
 
   const toggle = () => {
@@ -20,7 +21,7 @@ export default function Student() {
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Sidebar menu="student" />
+      <Sidebar menu="teacher" />
       <Layout className="site-layout">
         <Navbar />
         <Content
@@ -32,7 +33,7 @@ export default function Student() {
           }}
         >
           <div className="content-wrapper">
-            <h1>Welcome to Student</h1>
+            <RouterTeacher />
           </div>
           <div id="sidebar-overlay"></div>
         </Content>
