@@ -1,10 +1,8 @@
 // libs
-import "admin-lte/dist/js/adminlte.min";
 import "bootstrap";
 import { Suspense } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
-import { CssBaseline } from "@mui/material";
 // routes
 import appRoutes from "@/routers";
 // others
@@ -19,7 +17,6 @@ export default function App() {
     <BrowserRouter>
       <Suspense fallback="Suspensed">
         <ReduxProvider store={store}>
-          <CssBaseline />
           <Switch>
             {appRoutes.map((route) => (
               <Route

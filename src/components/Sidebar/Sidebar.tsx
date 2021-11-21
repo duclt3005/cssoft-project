@@ -1,55 +1,41 @@
-interface Props {
+import { Link } from "react-router-dom";
+import { PERMISSION } from "@/config/permission";
+import { Layout, Menu } from "antd";
+import { useState } from "react";
 
+const { Sider } = Layout;
+
+interface SidebarProps {
+  menu?: string;
 }
 
-const Sidebar = (props: Props) => {
-  const a = props;
-  return (
-    <aside className="main-sidebar sidebar-dark-primary elevation-4">
-      <a href="index3.html" className="brand-link">
-        <span className="brand-text font-weight-light">EMS</span>
-      </a>
+const Sidebar = (props: SidebarProps) => {
+  const [collapsed, setCollapsed] = useState(false);
+  const toggle = () => {
+    setCollapsed(!collapsed);
+  };
+  const menu = props.menu || "";
+  const sidebarMenu = PERMISSION[menu] || [];
+  const sidebarMenuKeys = Object.keys(sidebarMenu);
 
-      <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <li className="nav-item menu-open">
-          <a href="#" className="nav-link active">
-            <i className="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Dashboard
-              <i className="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul className="nav nav-treeview">
-            <li className="nav-item">
-              <a href="./index.html" className="nav-link active">
-                <i className="far fa-circle nav-icon"></i>
-                <p>Dashboard v1</p>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="./index2.html" className="nav-link">
-                <i className="far fa-circle nav-icon"></i>
-                <p>Dashboard v2</p>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="./index3.html" className="nav-link">
-                <i className="far fa-circle nav-icon"></i>
-                <p>Dashboard v3</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li className="nav-item">
-          <a href="pages/gallery.html" className="nav-link">
-            <i className="nav-icon far fa-image"></i>
-            <p>
-              Gallery
-            </p>
-          </a>
-        </li>
-      </ul>
-    </aside>
+  return (
+    <Sider trigger={null} collapsible collapsed={collapsed}>
+      <div className="logo">
+        <Link to="/"><p style={{ color: "#fff", fontSize: "20px", fontWeight: "bold", textAlign: "center" }}>ESM</p></Link>
+      </div>
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+        {
+          sidebarMenuKeys.map((menu, key) => (
+            <Menu.Item key={key}>
+              <p>
+                <i className={sidebarMenu[menu].icon as string}></i>
+                {sidebarMenu[menu].title}
+              </p>
+            </Menu.Item>
+          ))
+        }
+      </Menu>
+    </Sider>
   );
 };
 

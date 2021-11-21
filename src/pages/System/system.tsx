@@ -1,4 +1,3 @@
-// libs
 import { Layout } from "antd";
 
 import { useState } from "react";
@@ -12,7 +11,7 @@ const { Content } = Layout;
 /**
  * Home
  */
-export default function Home() {
+export default function System() {
   const [collapsed, setCollapsed] = useState(false);
 
   const toggle = () => {
@@ -21,7 +20,7 @@ export default function Home() {
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Sidebar />
+      <Sidebar menu="system" />
       <Layout className="site-layout">
         <Navbar />
         <Content
@@ -34,7 +33,7 @@ export default function Home() {
         >
           <div className="content-wrapper">
             <h1>
-              Welcome to Home
+              Welcome to System
             </h1>
           </div>
           <div id="sidebar-overlay"></div>

@@ -1,6 +1,4 @@
 // libs
-import { TextField } from "@mui/material";
-// hooks
 import { useTypedForm } from "@/hooks/useTypedForm";
 // components
 import SubmitBtn from "../../components/SubmitBtn";
@@ -17,7 +15,7 @@ export default function SignInForm() {
     <div className={classes.wrapper}>
       <div className={classes.title}>Sign in</div>
       <form>
-        <div className={classes.formItem}>
+        {/* <div className={classes.formItem}>
           <TextField
             {...register("username")}
             autoComplete="username"
@@ -34,7 +32,7 @@ export default function SignInForm() {
             autoComplete="password"
           />
         </div>
-        <SubmitBtn />
+        <SubmitBtn /> */}
       </form>
     </div>
   );
